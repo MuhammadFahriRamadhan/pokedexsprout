@@ -131,7 +131,7 @@ class PokemonAbout extends StatelessWidget {
             const Expanded(child: _Label('Height')),
             Expanded(
               flex: 2,
-              child: Text(pokemon.height.toString(), style: const TextStyle(height: 0.8)),
+              child: Text(formatHeight(pokemon.height), style: const TextStyle(height: 0.8)),
             ),
             const Expanded(flex: 1, child: SizedBox()),
           ],
@@ -142,7 +142,7 @@ class PokemonAbout extends StatelessWidget {
             const Expanded(child: _Label('Weight')),
             Expanded(
               flex: 2,
-              child: Text(pokemon.weight.toString(), style: const TextStyle(height: 0.8)),
+              child: Text(formatWeight(pokemon.weight), style: const TextStyle(height: 0.8)),
             ),
             const Expanded(flex: 1, child: SizedBox()),
           ],
@@ -199,8 +199,6 @@ class PokemonAbout extends StatelessWidget {
       ],
     );
   }
-
-
 
   Widget getGenderValue(int genderRate) {
     if (genderRate == -1) {
